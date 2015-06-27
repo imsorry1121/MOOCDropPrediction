@@ -1,0 +1,57 @@
+=== Run information ===
+
+Scheme:       weka.associations.FPGrowth -P 1 -I -1 -N 10 -T 0 -C 0.1 -D 0.05 -U 1.0 -M 0.005 -S
+Relation:     testPattern-weka.filters.unsupervised.attribute.NumericToNominal-Rfirst-last-weka.filters.unsupervised.attribute.Remove-R1
+Instances:    58364
+Attributes:   39
+              bWdj2GDclj5ofokWjzoa5jAwMkxCykd6
+              RXDvfPUBYFlVdlueBFbLW0mhhAyGEqpt
+              fbPkOYLVPtPgIt0MxizjfFJov3JbHyAi
+              A3fsA9Zfv1X2fVEQhTw51lKENdNrEqT3
+              5X6FeZozNMgE2VRi3MJYjkkFK8SETtu2
+              5Gyp41oLVo7Gg7vF4vpmggWP5MU70QO6
+              SpATywNh6bZuzm8s1ceuBUnMUAeoAHHw
+              3VkHkmOtom3jM2wCu94xgzzu1d6Dn7or
+              G8EPVSXsOYB5YQWZGiz1aVq5Pgr2GrQu
+              7GRhBDsirIGkRZBtSMEzNTyDr2JQm4xx
+              TAYxxh39I2LZnftBpL0LfF2NxzrCKpkx
+              DABrJ6O4AotFwuAbfo1fuMj40VmMpPGX
+              81UZtt1JJwBFYMj5u38WNKCSVA4IJSDv
+              ykoe1cCWK134BJmfbNoPEenJOIWdtQOZ
+              X78EhlW2JxwO1I6S3U4yZVwkEQpKXLOj
+              gvEwgd64UX4t3K7ftZwXiMkFuxFUAqQE
+              HbeAZjZFFQUe90oTP0RRO0PEtRAqU3kK
+              WM572q68zD5VW8pcvVTc1RhhFUq3iRFN
+              Wm3dddHSynJ76EJV6hyLYKGGRL0JF3YK
+              NmbZ3BmS8V4pMg6oxXHWpqqMZCE1jvYt
+              nSfGxfEtzw5G72fVbfaowxsV46Pg1xIc
+              Er0RFawC4sHagDmmQZcBGBrzamLQcblZ
+              AXUJZGmZ0xaYSWazu8RQ1G5c76ECT1Kd
+              9Mq1P5hrrLw6Bh9X4W4ZjisQJDdxjz9x
+              1pvLqtotBsKv7QSOsLicJDQMHx3lui6d
+              xMd9DzNyUCTLRPVbwWVzf4vq06oqrTT1
+              H2lDW05SyKnwntZ6Fora76aPAEswcMa5
+              9Bd26pfDLvkPINwLnpaGcf0LrLUvY1Mz
+              DPnLzkJJqOOPRJfBxIHbQEERiYHu5ila
+              q6A6QG7qMpyNcznyT2XaIxnfNGkZRxXl
+              3cnZpv6ReApmCaZyaQwi2izDZxVRdC01
+              a2E7NQC7nZB7WHEhKGhKnKvUWtsLAQzh
+              mTmmr5zd8l4wXhwiULwjSmSbi9ktcFmV
+              KHPw0gmg1Ad3V07TqRpyBzA8mRjj7mkt
+              shM3Yy9vxHn2aqjSYfQXOcwGo0hWh3MI
+              9zpXzW9zCfU8KGBWkhlsGH8B8czISH4J
+              I7Go4XwWgpjRJM8EZGEnBpkfSmBNOlsO
+              tXbz2ZYaRyb2ZsWUBPoYzAmisOhHQrYl
+              V4tXq15GxHo2gaMpaJLZ3IGEkP949IbE
+=== Associator model (full training set) ===
+
+FPGrowth found 8 rules
+
+1. [3cnZpv6ReApmCaZyaQwi2izDZxVRdC01=1]: 1462 ==> [shM3Yy9vxHn2aqjSYfQXOcwGo0hWh3MI=1]: 306   <conf:(0.21)> lift:(4.02) lev:(0) conv:(1.2) 
+2. [5Gyp41oLVo7Gg7vF4vpmggWP5MU70QO6=1]: 1971 ==> [81UZtt1JJwBFYMj5u38WNKCSVA4IJSDv=1]: 368   <conf:(0.19)> lift:(1.35) lev:(0) conv:(1.06) 
+3. [SpATywNh6bZuzm8s1ceuBUnMUAeoAHHw=1]: 3913 ==> [H2lDW05SyKnwntZ6Fora76aPAEswcMa5=1]: 449   <conf:(0.11)> lift:(1.18) lev:(0) conv:(1.02) 
+4. [V4tXq15GxHo2gaMpaJLZ3IGEkP949IbE=1]: 2672 ==> [SpATywNh6bZuzm8s1ceuBUnMUAeoAHHw=1]: 293   <conf:(0.11)> lift:(1.64) lev:(0) conv:(1.05) 
+5. [ykoe1cCWK134BJmfbNoPEenJOIWdtQOZ=1]: 3262 ==> [H2lDW05SyKnwntZ6Fora76aPAEswcMa5=1]: 337   <conf:(0.1)> lift:(1.07) lev:(0) conv:(1.01) 
+6. [ykoe1cCWK134BJmfbNoPEenJOIWdtQOZ=1]: 3262 ==> [SpATywNh6bZuzm8s1ceuBUnMUAeoAHHw=1]: 331   <conf:(0.1)> lift:(1.51) lev:(0) conv:(1.04) 
+7. [shM3Yy9vxHn2aqjSYfQXOcwGo0hWh3MI=1]: 3037 ==> [3cnZpv6ReApmCaZyaQwi2izDZxVRdC01=1]: 306   <conf:(0.1)> lift:(4.02) lev:(0) conv:(1.08) 
+8. [AXUJZGmZ0xaYSWazu8RQ1G5c76ECT1Kd=1]: 5242 ==> [DPnLzkJJqOOPRJfBxIHbQEERiYHu5ila=1]: 526   <conf:(0.1)> lift:(0.85) lev:(0) conv:(0.98) 

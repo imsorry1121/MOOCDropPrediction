@@ -1,0 +1,57 @@
+sequential
+generalized sequential patterns 
+input: enrollment_test.csv
+minsupport: 0.005
+
+Number of cycles performed: 2
+Total number of frequent sequences: 42
+
+Frequent Sequences Details (filtered):
+
+- 1-sequences
+
+[1] <{DPnLzkJJqOOPRJfBxIHbQEERiYHu5ila}> (6863)
+[2] <{xMd9DzNyUCTLRPVbwWVzf4vq06oqrTT1}> (1740)
+[3] <{shM3Yy9vxHn2aqjSYfQXOcwGo0hWh3MI}> (3037)
+[4] <{AXUJZGmZ0xaYSWazu8RQ1G5c76ECT1Kd}> (5242)
+[5] <{NmbZ3BmS8V4pMg6oxXHWpqqMZCE1jvYt}> (2021)
+[6] <{HbeAZjZFFQUe90oTP0RRO0PEtRAqU3kK}> (882)
+[7] <{SpATywNh6bZuzm8s1ceuBUnMUAeoAHHw}> (3913)
+[8] <{KHPw0gmg1Ad3V07TqRpyBzA8mRjj7mkt}> (512)
+[9] <{V4tXq15GxHo2gaMpaJLZ3IGEkP949IbE}> (2672)
+[10] <{H2lDW05SyKnwntZ6Fora76aPAEswcMa5}> (5656)
+[11] <{mTmmr5zd8l4wXhwiULwjSmSbi9ktcFmV}> (987)
+[12] <{7GRhBDsirIGkRZBtSMEzNTyDr2JQm4xx}> (900)
+[13] <{A3fsA9Zfv1X2fVEQhTw51lKENdNrEqT3}> (1459)
+[14] <{a2E7NQC7nZB7WHEhKGhKnKvUWtsLAQzh}> (1943)
+[15] <{TAYxxh39I2LZnftBpL0LfF2NxzrCKpkx}> (785)
+[16] <{5Gyp41oLVo7Gg7vF4vpmggWP5MU70QO6}> (1971)
+[17] <{q6A6QG7qMpyNcznyT2XaIxnfNGkZRxXl}> (890)
+[18] <{bWdj2GDclj5ofokWjzoa5jAwMkxCykd6}> (1261)
+[19] <{3cnZpv6ReApmCaZyaQwi2izDZxVRdC01}> (1462)
+[20] <{9Bd26pfDLvkPINwLnpaGcf0LrLUvY1Mz}> (2888)
+[21] <{81UZtt1JJwBFYMj5u38WNKCSVA4IJSDv}> (8100)
+[22] <{1pvLqtotBsKv7QSOsLicJDQMHx3lui6d}> (1553)
+[23] <{9zpXzW9zCfU8KGBWkhlsGH8B8czISH4J}> (1031)
+[24] <{RXDvfPUBYFlVdlueBFbLW0mhhAyGEqpt}> (732)
+[25] <{5X6FeZozNMgE2VRi3MJYjkkFK8SETtu2}> (603)
+[26] <{I7Go4XwWgpjRJM8EZGEnBpkfSmBNOlsO}> (6408)
+[27] <{gvEwgd64UX4t3K7ftZwXiMkFuxFUAqQE}> (521)
+[28] <{ykoe1cCWK134BJmfbNoPEenJOIWdtQOZ}> (3262)
+[29] <{Er0RFawC4sHagDmmQZcBGBrzamLQcblZ}> (1391)
+[30] <{WM572q68zD5VW8pcvVTc1RhhFUq3iRFN}> (398)
+[31] <{X78EhlW2JxwO1I6S3U4yZVwkEQpKXLOj}> (816)
+[32] <{fbPkOYLVPtPgIt0MxizjfFJov3JbHyAi}> (1413)
+[33] <{9Mq1P5hrrLw6Bh9X4W4ZjisQJDdxjz9x}> (738)
+[34] <{nSfGxfEtzw5G72fVbfaowxsV46Pg1xIc}> (1335)
+[35] <{tXbz2ZYaRyb2ZsWUBPoYzAmisOhHQrYl}> (651)
+[36] <{DABrJ6O4AotFwuAbfo1fuMj40VmMpPGX}> (986)
+[37] <{G8EPVSXsOYB5YQWZGiz1aVq5Pgr2GrQu}> (820)
+[38] <{3VkHkmOtom3jM2wCu94xgzzu1d6Dn7or}> (1280)
+[39] <{Wm3dddHSynJ76EJV6hyLYKGGRL0JF3YK}> (1240)
+
+- 2-sequences
+
+[1] <{DPnLzkJJqOOPRJfBxIHbQEERiYHu5ila}{AXUJZGmZ0xaYSWazu8RQ1G5c76ECT1Kd}> (330)
+[2] <{DPnLzkJJqOOPRJfBxIHbQEERiYHu5ila}{H2lDW05SyKnwntZ6Fora76aPAEswcMa5}> (332)
+[3] <{AXUJZGmZ0xaYSWazu8RQ1G5c76ECT1Kd}{H2lDW05SyKnwntZ6Fora76aPAEswcMa5}> (301)
