@@ -1,4 +1,4 @@
-def process(inputFile="../data/test/enrollment_test.csv", outputFile="../result/testSequential.csv", outputFile2="../result/testPattern.csv", courseFile="../data/date.csv"):
+def process(inputFile="../data/train/enrollment_train.csv", outputFile="../result/trainSequential.csv", outputFile2="../result/trainPattern.csv", courseFile="../data/date.csv"):
 	users = list()
 	courses = list()
 	userCourses = dict()
