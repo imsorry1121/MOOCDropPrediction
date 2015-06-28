@@ -79,4 +79,10 @@ def readEnrollData(enrollFile):
 
 
 if __name__=="__main__":
-	main()
+	# short 
+	# main()
+
+	# training
+	# main(outputFile="../result/time.csv",logFile="../data/train/log_train.csv", enrollFile="../data/train/enrollment_train.csv", gtFile="../data/train/truth_train.csv"):
+	# testing 
+	main(outputFile="../result/timeTest.csv",logFile="../data/test/log_test.csv", enrollFile="../data/test/enrollment_test.csv", gtFile="../data/test/origin_test.csv")
