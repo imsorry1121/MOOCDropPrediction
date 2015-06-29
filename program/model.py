@@ -18,7 +18,7 @@ import pandas as pd
 
 
 # model: no testing data
-def modelCompareTraining(trainFile="../result/temp_feature.csv", resultFile="../result/evalutionTraining.csv"):
+def modelCompareTraining(trainFile="../processedData/training_feature.csv", resultFile="../result/evalutionTraining.csv", importanceFile =""):
 	print("model compare in training")
 	# data
 	data = readData(trainFile)
@@ -27,7 +27,7 @@ def modelCompareTraining(trainFile="../result/temp_feature.csv", resultFile="../
 	# trainingX = csv[:,1:]
 	
 	# where is the y
-	X = data[:,1:]
+	X = data[:,4:]
 	Y = data[:,0]
 	(nrow, ncol) = X.shape
 	
@@ -55,15 +55,24 @@ def modelCompareTraining(trainFile="../result/temp_feature.csv", resultFile="../
 	adaAUC = list()
 	rfAccus = list()
 	rfAUC = list()
+
+	c=0
 	for train_index, test_index in kf:
+		print("iteration:"+str(c))
 		X_train, X_test = X[train_index], X[test_index]
 		Y_train, Y_test = Y[train_index], Y[test_index]
 		
 		# logistic regression
-		lgAccus.append(lm.LogisticRegression().fit(X_train, Y_train).score(X_test, Y_test))
+		lgModel = lm.LogisticRegression().fit(X_train, Y_train))
+		lgAccus.append(lgModel.score(X_test, Y_test))
+		lgProbas = lgModel.predict_proba(X_test)
+		lgAUC.append(calculateAUC(lgProbas))
 
 		# naive bayes
-		nbAccus.append(nb.GaussianNB().fit(X_train, Y_train).score(X_test, Y_test))
+		nbModel = nb.GaussianNB().fit(X_train, Y_train))
+		nbAccus.append(nbModel.score(X_test, Y_test))
+		nbProbas = nbModel.predict_proba(X_test)
+		nbAUC.append(calculateAUC(nbProbas))
 		# neural network: python no
 
 		# svm: rbf
@@ -72,30 +81,34 @@ def modelCompareTraining(trainFile="../result/temp_feature.csv", resultFile="../
 		# decision tree
 		dtModel = tree.DecisionTreeClassifier().fit(X_train, Y_train)
 		dtAccus.append(dtModel.score(X_test, Y_test))
+		dtProbas = dtModel.predict_log_proba(X_test)
+		dtAUC.append(calculateAUC(dtProbas, Y_test))
 
-		probas = dtModel.predict_proba(X_test)
-		dtAUC.append(calculateAUC(probas, Y_test))
+		# adaboost
+		adaModel = en.GradientBoostingClassifier().fit(X_train, Y_train)
+		adaAccus.append(adaModel.score(X_test, Y_test))
+		adaProbas = adaModel.predict_log_proba(X_test)
+		adaAUC.append(calculateAUC(dtProbas, Y_test))
+		# random forest: need to adjust n_estimator
+		rfModel = en.RandomForestClassifier(max_features=(int(ncol/2))).fit(X_train, Y_train)
+		rfAccu.append(rfModel.score(X_test, Y_test))
+		rfProbas = rfModel.predict_log_proba(X_test)
+		rfAUC.append(calculateAUC(rfProbas, Y_test))
 
-		probasLog = dtModel.predict_log_proba(X_test)
-		dtAUClog.append(calculateAUC(probasLog, Y_test))
 
-		# # adaboost
-		# adaAccus.append(en.GradientBoostingClassifier().fit(X_train, Y_train).score(X_test, Y_test))
-		# # random forest: need to adjust n_estimator
-		# rfAccus.append(en.RandomForestClassifier(max_features=(int(ncol/2))).fit(X_train, Y_train).score(X_test, Y_test))
-
-
+		c=c+1
 	# write decision tree file
 	# outputTree(X, Y, fileName)
 
 	# get feature importance in decision tree ans randomforest
-	# rfModel = en.RandomForestClassifier(max_features=(int(ncol/2))).fit(X_train, Y_train)
-	# print(rfModel.feature_importances_)
+	rfModel = en.RandomForestClassifier(max_features=(int(ncol/2))).fit(X_train, Y_train)
+	print(rfModel.feature_importances_)
 
 	# pydotplus is better
 
 	print(st.mean(dtAUC), st.mean(dtAUClog))
-	# print(st.mean(lgAccus), st.mean(nbAccus), st.mean(svmAccus), st.mean(lsvmAccus), st.mean(dtAccus), st.mean(adaAccus), st.mean(rfAccus))
+	print(st.mean(lgAccus), st.mean(nbAccus), st.mean(svmAccus), st.mean(lsvmAccus), st.mean(dtAccus), st.mean(adaAccus), st.mean(rfAccus))
+	return None
 	# return st.mean(lgAccus)
 
 
@@ -105,23 +118,32 @@ def modelCompareTesting(trainFile="../result/featureTrain.csv", testFile="../res
 	# data 
 	testing = readData(trainFile)
 	training = readData(testFile)
-	trainingY = csv[:,0]
-	trainingX = csv[:,1:]
-	testingY = csv[:0]
-	trainingX = csv[:,1:]
+	Y_train = csv[:,0]
+	X_train = csv[:,1:]
+	Y_test = csv[:0]
+	X_test = csv[:,1:]
 
-	# model
+	modelAccu = dict()
+	modelAUC = dict()
 	# logistic regression
+	lgProbas = lm.LogisticRegression().fit(X_train, Y_train).predict_proba(X_test)
 
 	# naive bayes
+	nbProbas = nb.GaussianNB().fit(X_train, Y_train).predict_proba(X_test)
+	# neural network: python no
 
-	# neural network
-
-	# svm
-
+	# svm: rbf
+	# svmProbas = svm.SVC(kernel='rbf').fit(X_train, Y_train).decistion_function(X_test))
+	# lsvmProbas = lsvmAccus.append(svm.LinearSVC().fit(X_train, Y_train).score(X_test, Y_test))
 	# decision tree
+	dfProbas = tree.DecisionTreeClassifier().fit(X_train, Y_train).predict_log_proba(X_test)
 
-	# 
+	# adaboost
+	adaProbas = tree.DecisionTreeClassifier().fit(X_train, Y_train).predict_log_proba(X_test)
+
+
+
+
 def outputTree(X, Y, fileName):
 	dtModel = tree.DecisionTreeClassifier().fit(X, Y)
 	dot_data = StringIO() 
